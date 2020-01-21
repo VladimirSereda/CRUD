@@ -9,12 +9,11 @@
   </head>
   <body>
       <div class="container">
-        <%= link_to "mini Post" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <%= link_to "Home page", home_path%>
-            <%= link_to "About us", about_path%>
-            <%= link_to "Adding article", new_post_path%>
+            <%= link_to "Home page", home_path, :class => 'btn btn-info' %>
+            <%= link_to "About us", about_path, :class => 'btn btn-info'%>
+            <%= link_to "Adding article", new_post_path, :class => 'btn btn-info'%>
           </ul>
         </nav>
       </div>
