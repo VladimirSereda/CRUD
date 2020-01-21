@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def index
     @post = Post.all
@@ -16,12 +18,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post= Post.find(params[:id])
-    if (@post.update(post_params))
-    redirect_to @post
-  else
-    render 'edit'
-    end
+    @post = Post.find(params[:id])
+    redirect_to @post, notice: 'comment edited' if @post.update(post_params)
   end
 
   def destroy
@@ -32,14 +30,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if (@post.save)
-    redirect_to @post
-  else
-    render 'new'
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
   end
 end
 
-private def post_params
-  params.require(:post).permit(:title, :body)
-  end
+  private def post_params
+    params.require(:post).permit(:title, :body)
+    end
   end

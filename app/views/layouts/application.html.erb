@@ -8,10 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% flash.each do |name, msg| -%>
-     <%= content_tag :div, msg, class: name , :class => 'btn btn-primary btn-lg btn-block'%>
-   <% end %>
-      <div class="container">
+          <div class="container">
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <%= link_to "Home page", home_path, :class => 'btn btn-info' %>
@@ -21,7 +18,8 @@
         </nav>
       </div>
     <div class="container">
-    <%= yield %>
+    <%= render "shared/flashes" %>
+     <%= yield %>
     </div>
   </body>
 </html>
