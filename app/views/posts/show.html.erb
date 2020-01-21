@@ -2,7 +2,7 @@
 <p><%= @post.body %></p>
 <hr>
 <%= link_to "red-pencil", edit_post_path(@post), :class => 'btn btn-warning' %>
-<%= link_to "Destroy", post_path(@post), method: :delete, data:{confirm: "Want to delete an post"}, :class => 'btn btn-danger' %>
+<%= link_to "Destroy", post_path(@post), method: :delete, data:{сonfirm: "Want to delete an post"}, :class => 'btn btn-danger' %>
 <hr>
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
@@ -24,6 +24,6 @@
   <%= f.text_area(:body, {:class => 'form-control'}) %>
 </p>
 <p>
-  <%= f.submit("Add comment",{:class => 'btn btn-warning'}) %>
+  <%= f.submit"Add comment",method: :submit, data:{confirm: "want to submit"},:class => 'btn btn-warning' %>
 </p>
 <% end %>
